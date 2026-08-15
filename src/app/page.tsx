@@ -21,7 +21,7 @@ export default function HomePage() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-primary-light">
             Salon Kecantikan &amp; Spa
           </p>
-          <h1 className="text-4xl font-bold leading-tight md:text-6xl">
+          <h1 className="text-3xl font-bold leading-tight sm:text-4xl md:text-6xl">
             Nikmati Perawatan,<br />
             <span className="text-primary-light">Wujudkan Kulit Sehatmu</span>
           </h1>

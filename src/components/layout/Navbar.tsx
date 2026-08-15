@@ -90,7 +90,11 @@ export default function Navbar() {
               </li>
             ))}
             <li className="py-3">
-              <Button href="/booking" className="w-full">
+              <Button
+                href="/booking"
+                className="w-full"
+                onClick={() => setOpen(false)}
+              >
                 Booking Sekarang
               </Button>
             </li>

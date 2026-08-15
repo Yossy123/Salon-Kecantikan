@@ -82,12 +82,12 @@ export default function BookingForm() {
 
   return (
     <div className="rounded-3xl border border-ink/10 bg-white p-8 shadow-sm md:p-10">
-      <ol className="mb-8 flex items-center gap-2 text-sm">
+      <ol className="mb-8 flex items-center gap-2 overflow-x-auto pb-1 text-sm">
         {(["Layanan", "Jadwal", "Data Diri", "Konfirmasi"] as const).map(
           (label, i) => {
             const n = (i + 1) as Step;
             return (
-              <li key={label} className="flex items-center gap-2">
+              <li key={label} className="flex shrink-0 items-center gap-2">
                 <span
                   aria-current={step === n ? "step" : undefined}
                   className={`flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold ${
@@ -100,7 +100,13 @@ export default function BookingForm() {
                 >
                   {n}
                 </span>
-                <span className={step === n ? "font-semibold text-ink" : "text-ink/60"}>
+                <span
+                  className={
+                    step === n
+                      ? "font-semibold text-ink sm:inline"
+                      : "hidden text-ink/60 sm:inline"
+                  }
+                >
                   {label}
                 </span>
                 {n < 4 ? <span className="text-ink/30">›</span> : null}
