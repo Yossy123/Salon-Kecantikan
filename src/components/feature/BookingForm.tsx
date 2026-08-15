@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import { doctors, services } from "@/lib/data";
 import { bookingText, waLink } from "@/lib/wa";
 import type { Service } from "@/types";
@@ -116,7 +117,15 @@ export default function BookingForm() {
         )}
       </ol>
 
-      {step === 1 ? (
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={step}
+          initial={{ opacity: 0, x: 24 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -24 }}
+          transition={{ duration: 0.25, ease: "easeInOut" }}
+        >
+        {step === 1 ? (
         <div>
           <h3 className="mb-4 text-lg font-bold text-ink">Pilih Layanan</h3>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -253,6 +262,8 @@ export default function BookingForm() {
           {error}
         </p>
       ) : null}
+        </motion.div>
+      </AnimatePresence>
 
       <div className="mt-8 flex items-center justify-between gap-3">
         {step > 1 ? (

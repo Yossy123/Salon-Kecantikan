@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import type { Testimonial } from "@/types";
 
 export default function TestimonialSlider({
@@ -19,11 +20,21 @@ export default function TestimonialSlider({
       <p className="text-6xl text-primary" aria-hidden="true">
         &ldquo;
       </p>
-      <blockquote className="text-lg font-medium leading-relaxed text-ink md:text-xl">
-        {current.quote}
-      </blockquote>
-      <p className="mt-6 text-sm font-semibold text-primary">— {current.name}</p>
-      <p className="text-sm text-ink/60">Layanan: {current.service}</p>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -16 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
+          <blockquote className="text-lg font-medium leading-relaxed text-ink md:text-xl">
+            {current.quote}
+          </blockquote>
+          <p className="mt-6 text-sm font-semibold text-primary">— {current.name}</p>
+          <p className="text-sm text-ink/60">Layanan: {current.service}</p>
+        </motion.div>
+      </AnimatePresence>
 
       <div className="mt-8 flex items-center justify-center gap-4">
         <button

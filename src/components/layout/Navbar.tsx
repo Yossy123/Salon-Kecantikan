@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import Button from "@/components/ui/Button";
 
 const navItems = [
@@ -62,45 +63,93 @@ export default function Navbar() {
             aria-label={open ? "Tutup menu" : "Buka menu"}
             className="rounded-md p-2 text-ink hover:bg-ink/5 lg:hidden"
           >
-            {open ? "✕" : "☰"}
+            <span
+              aria-hidden="true"
+              className="relative block h-5 w-6"
+            >
+              <span
+                className={`absolute left-0 top-0 block h-0.5 w-6 rounded-full bg-current transition-transform duration-300 ease-in-out ${
+                  open ? "translate-y-2 rotate-45" : "rotate-0"
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-1/2 block h-0.5 w-6 -translate-y-1/2 rounded-full bg-current transition-opacity duration-300 ease-in-out ${
+                  open ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute bottom-0 left-0 block h-0.5 w-6 rounded-full bg-current transition-transform duration-300 ease-in-out ${
+                  open ? "-translate-y-2 -rotate-45" : "rotate-0"
+                }`}
+              />
+            </span>
           </button>
         </div>
       </div>
 
-      {open ? (
-        <nav
-          id="mobile-menu"
-          className="border-t border-ink/10 lg:hidden"
-          aria-label="Navigasi mobile"
-        >
-          <ul className="flex flex-col px-4 py-2">
-            {navItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  className={
-                    isActive(item.href)
-                      ? "block py-3 text-sm font-semibold text-primary"
-                      : "block py-3 text-sm text-ink/70 hover:text-primary"
-                  }
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-            <li className="py-3">
-              <Button
-                href="/booking"
-                className="w-full"
-                onClick={() => setOpen(false)}
-              >
-                Booking Sekarang
-              </Button>
-            </li>
-          </ul>
-        </nav>
-      ) : null}
+      <AnimatePresence initial={false}>
+        {open ? (
+          <motion.nav
+            key="mobile-menu"
+            id="mobile-menu"
+            aria-label="Navigasi mobile"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden lg:hidden"
+          >
+            <div className="border-t border-ink/10">
+              <ul className="flex flex-col px-4 py-2">
+                {navItems.map((item, i) => (
+                  <li key={item.href}>
+                    <motion.div
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{
+                        duration: 0.25,
+                        delay: 0.04 * i,
+                        ease: "easeOut",
+                      }}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className={
+                          isActive(item.href)
+                            ? "block py-3 text-sm font-semibold text-primary"
+                            : "block py-3 text-sm text-ink/70 hover:text-primary"
+                        }
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  </li>
+                ))}
+                <li className="py-3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.25,
+                      delay: 0.04 * navItems.length,
+                      ease: "easeOut",
+                    }}
+                  >
+                    <Button
+                      href="/booking"
+                      className="w-full"
+                      onClick={() => setOpen(false)}
+                    >
+                      Booking Sekarang
+                    </Button>
+                  </motion.div>
+                </li>
+              </ul>
+            </div>
+          </motion.nav>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
