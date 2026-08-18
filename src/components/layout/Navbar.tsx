@@ -10,6 +10,7 @@ const navItems = [
   { href: "/", label: "Beranda" },
   { href: "/tentang", label: "Tentang" },
   { href: "/layanan", label: "Layanan" },
+  { href: "/produk", label: "Produk" },
   { href: "/dokter", label: "Dokter" },
   { href: "/promo", label: "Promo" },
   { href: "/artikel", label: "Artikel" },

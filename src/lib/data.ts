@@ -2,6 +2,7 @@ import type {
   Article,
   ClinicLocation,
   Doctor,
+  Product,
   Promo,
   Service,
   StaffMember,
@@ -304,6 +305,92 @@ export const promos: Promo[] = [
     description:
       "Potong rambut sekaligus perawatan nutrisi dalam satu kunjungan, cocok untuk menyegarkan tampilan.",
     image: "img_3.jpg",
+  },
+];
+
+export const products: Product[] = [
+  {
+    slug: "gentle-facial-wash",
+    name: "Gentle Facial Wash",
+    category: "pembersih",
+    description:
+      "Pembersih wajah bertekstur lembut untuk membantu mengangkat kotoran dan minyak tanpa membuat kulit terasa tertarik.",
+    highlights: ["Untuk pemakaian pagi dan malam", "Cocok untuk perawatan harian"],
+    size: "100 ml",
+    image: "img_1.jpg",
+    featured: true,
+  },
+  {
+    slug: "daily-shield-sunscreen-spf-50",
+    name: "Daily Shield Sunscreen SPF 50",
+    category: "pelindung-matahari",
+    description:
+      "Sunscreen harian bertekstur ringan untuk melengkapi rutinitas pagi sebelum beraktivitas di luar ruangan.",
+    highlights: ["SPF 50", "Nyaman digunakan sebelum makeup"],
+    size: "50 ml",
+    image: "hero_bg_2.jpg",
+    featured: true,
+  },
+  {
+    slug: "hydra-barrier-moisturizer",
+    name: "Hydra Barrier Moisturizer",
+    category: "pelembap",
+    description:
+      "Pelembap wajah untuk membantu menjaga kenyamanan kulit dan mendukung rutinitas perawatan yang konsisten.",
+    highlights: ["Tekstur ringan", "Untuk pagi atau malam hari"],
+    size: "50 g",
+    image: "img_2.jpg",
+    featured: true,
+  },
+  {
+    slug: "brightening-serum",
+    name: "Brightening Serum",
+    category: "serum",
+    description:
+      "Serum wajah yang dapat dimasukkan ke dalam rutinitas untuk kulit yang tampak lebih cerah dan terawat.",
+    highlights: ["Gunakan setelah cleansing", "Dapat dilanjutkan dengan pelembap"],
+    size: "30 ml",
+    image: "hero_bg_3.jpg",
+  },
+  {
+    slug: "calming-acne-serum",
+    name: "Calming Acne Serum",
+    category: "serum",
+    description:
+      "Serum pendamping untuk rutinitas kulit yang rentan berjerawat, dengan fokus pada sensasi perawatan yang nyaman.",
+    highlights: ["Untuk rutinitas kulit berjerawat", "Rekomendasi pemakaian tersedia di salon"],
+    size: "30 ml",
+    image: "img_5.jpg",
+  },
+  {
+    slug: "silky-body-lotion",
+    name: "Silky Body Lotion",
+    category: "perawatan-tubuh",
+    description:
+      "Lotion tubuh untuk penggunaan harian setelah mandi agar kulit terasa lebih lembut dan terawat.",
+    highlights: ["Aroma lembut", "Cocok dipakai setelah mandi"],
+    size: "250 ml",
+    image: "work-1.jpg",
+  },
+  {
+    slug: "hair-repair-serum",
+    name: "Hair Repair Serum",
+    category: "perawatan-rambut",
+    description:
+      "Serum rambut untuk membantu menyempurnakan tampilan rambut setelah styling dan perawatan di salon.",
+    highlights: ["Untuk batang hingga ujung rambut", "Pemakaian praktis setelah styling"],
+    size: "60 ml",
+    image: "img_3.jpg",
+  },
+  {
+    slug: "soft-skin-hand-body-lotion",
+    name: "Soft Skin Hand & Body Lotion",
+    category: "perawatan-tubuh",
+    description:
+      "Lotion serbaguna untuk menjaga kulit tangan dan tubuh tetap terasa nyaman sepanjang hari.",
+    highlights: ["Praktis dibawa bepergian", "Untuk tangan dan tubuh"],
+    size: "100 ml",
+    image: "img_4.jpg",
   },
 ];
 

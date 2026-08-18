@@ -56,6 +56,11 @@ Status checklist. Centang `[x]` saat selesai & lolos verifikasi (lint + typechec
 - [ ] Audit kontras & interaksi lanjutan (desktop/mobile cross-check browser)
 - [ ] Commit final + update file dokumentasi ini
 
+## Fase 5b - Katalog Produk
+- [x] `/produk` - katalog produk perawatan dengan filter kategori dan tombol tanya stok via WhatsApp
+- [x] Data produk di `src/lib/data.ts` - facial wash, sunscreen, serum, pelembap, lotion, dan perawatan rambut
+- [x] Produk unggulan ditampilkan di beranda serta ditautkan dari Navbar dan Footer
+
 ## Backlog / Ide Lanjutan (di luar MVP)
 - [x] Halaman detail artikel (`/artikel/[slug]`) — sudah dibuat ringkas di Fase 3
 - [ ] Data dokter real (ganti dummy setelah konfirmasi client)

@@ -4,10 +4,12 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ServiceCard from "@/components/feature/ServiceCard";
 import TestimonialSlider from "@/components/feature/TestimonialSlider";
 import DoctorCard from "@/components/feature/DoctorCard";
-import { doctors, promos, services, solutionCards, testimonials } from "@/lib/data";
+import ProductCard from "@/components/feature/ProductCard";
+import { doctors, products, promos, services, solutionCards, testimonials } from "@/lib/data";
 
 export default function HomePage() {
   const featured = services.slice(0, 3);
+  const featuredProducts = products.filter((product) => product.featured);
 
   return (
     <>
@@ -83,6 +85,27 @@ export default function HomePage() {
           <div className="mt-10 text-center">
             <Button href="/layanan" variant="outline">
               Lihat Semua Layanan
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Produk Perawatan */}
+      <section className="bg-primary-light/40 py-20">
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          <SectionHeading
+            eyebrow="Produk Perawatan"
+            title="Lanjutkan Perawatan di Rumah"
+            subtitle="Produk pilihan untuk melengkapi rutinitas kulit dan tubuhmu setelah berkunjung ke Niggy Salon."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Button href="/produk" variant="outline">
+              Lihat Semua Produk
             </Button>
           </div>
         </div>

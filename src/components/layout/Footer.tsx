@@ -4,6 +4,7 @@ import { CLINIC_INFO } from "@/lib/data";
 const quickLinks = [
   { href: "/tentang", label: "Tentang Kami" },
   { href: "/layanan", label: "Layanan" },
+  { href: "/produk", label: "Produk Perawatan" },
   { href: "/dokter", label: "Cari Dokter" },
   { href: "/promo", label: "Promo" },
   { href: "/booking", label: "Booking" },

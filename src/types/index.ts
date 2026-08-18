@@ -1,5 +1,13 @@
 export type ServiceCategory = "kulit" | "rambut" | "makeup" | "body";
 
+export type ProductCategory =
+  | "pembersih"
+  | "serum"
+  | "pelembap"
+  | "pelindung-matahari"
+  | "perawatan-tubuh"
+  | "perawatan-rambut";
+
 export interface Service {
   slug: string;
   name: string;
@@ -46,6 +54,17 @@ export interface Promo {
   description: string;
   badge: string;
   image: string;
+}
+
+export interface Product {
+  slug: string;
+  name: string;
+  category: ProductCategory;
+  description: string;
+  highlights: string[];
+  size: string;
+  image: string;
+  featured?: boolean;
 }
 
 export interface Testimonial {
