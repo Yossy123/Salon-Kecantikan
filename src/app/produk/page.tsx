@@ -17,7 +17,7 @@ export default function ProductsPage() {
         <SectionHeading
           eyebrow="Produk Perawatan"
           title="Rawat Dirimu, Lanjutkan di Rumah"
-          subtitle="Temukan pilihan produk untuk melengkapi rutinitas perawatan kulit, tubuh, dan rambutmu. Tanyakan stok serta rekomendasi pemakaian kepada tim kami."
+          subtitle="Temukan pilihan produk untuk melengkapi rutinitas perawatan kulit, tubuh, dan rambutmu. Pesan langsung melalui WhatsApp dan dapatkan rekomendasi pemakaian dari tim kami."
         />
         <Suspense fallback={<p className="py-16 text-center text-ink/60">Memuat produk...</p>}>
           <ProductList products={products} />

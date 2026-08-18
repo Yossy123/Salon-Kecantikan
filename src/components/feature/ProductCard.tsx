@@ -13,7 +13,7 @@ const categoryLabels = {
 } as const;
 
 export default function ProductCard({ product }: { product: Product }) {
-  const message = `Halo Niggy Salon, saya ingin menanyakan ketersediaan produk ${product.name}.`;
+  const message = `Halo Niggy Salon, saya ingin memesan produk ${product.name}. Mohon info proses pemesanan dan totalnya.`;
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm transition-shadow hover:shadow-lg">
@@ -53,7 +53,7 @@ export default function ProductCard({ product }: { product: Product }) {
             variant="outline"
             className="w-full"
           >
-            Tanya Stok
+            Pesan Sekarang
           </Button>
         </div>
       </div>
