@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { staffMembers } from "@/lib/data";
@@ -27,12 +28,15 @@ export default function TentangPage() {
 
       <section className="py-20">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 md:grid-cols-2 md:px-8">
-          <div
-            className="h-80 rounded-3xl bg-cover bg-center shadow-sm md:h-[420px]"
-            style={{ backgroundImage: "url('/images/img_1.jpg')" }}
-            role="img"
-            aria-label="Suasana perawatan di Niggy Salon"
-          />
+          <div className="relative h-80 overflow-hidden rounded-3xl shadow-sm md:h-[420px]">
+            <Image
+              src="/images/img_1.jpg"
+              alt="Suasana perawatan di Niggy Salon"
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
           <div>
             <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">
               Cerita Kami
@@ -71,12 +75,15 @@ export default function TentangPage() {
                 key={staff.name}
                 className="rounded-2xl border border-ink/10 bg-white p-6 text-center shadow-sm"
               >
-                <div
-                  className="mx-auto mb-4 h-32 w-32 rounded-full bg-cover bg-center"
-                  style={{ backgroundImage: `url('/images/${staff.photo}')` }}
-                  role="img"
-                  aria-label={`Foto ${staff.name}`}
-                />
+                <div className="relative mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full">
+                  <Image
+                    src={`/images/${staff.photo}`}
+                    alt={`Foto ${staff.name}`}
+                    fill
+                    sizes="128px"
+                    className="object-cover"
+                  />
+                </div>
                 <h3 className="text-lg font-bold text-ink">{staff.name}</h3>
                 <p className="mt-1 text-sm font-semibold text-primary">
                   {staff.position}

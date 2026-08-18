@@ -52,7 +52,9 @@ Status checklist. Centang `[x]` saat selesai & lolos verifikasi (lint + typechec
 - [x] Aksesibilitas dasar: heading, alt, label, fokus
 - [x] Responsif mobile navbar & grid
 - [x] Verifikasi build: semua rute 200 (`npm run build` + `next start`)
-- [ ] Sitemap + (`app/sitemap.ts`) & `robots.txt`
+- [x] `robots.txt` dasar untuk crawler
+- [ ] Sitemap (`app/sitemap.ts`) setelah domain produksi dikonfirmasi
+- [x] Polish konten non-dokter, form, dan hierarki beranda (lint + typecheck)
 - [ ] Audit kontras & interaksi lanjutan (desktop/mobile cross-check browser)
 - [ ] Commit final + update file dokumentasi ini
 

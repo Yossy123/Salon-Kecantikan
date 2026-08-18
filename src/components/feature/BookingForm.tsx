@@ -33,6 +33,7 @@ export default function BookingForm() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState("");
+  const minimumDate = new Date().toISOString().split("T")[0];
 
   const selectedService: Service | undefined = services.find(
     (s) => s.slug === serviceSlug
@@ -75,7 +76,7 @@ export default function BookingForm() {
       phone,
       doctor: doctor || undefined,
     });
-    window.open(waLink(message), "_blank");
+    window.open(waLink(message), "_blank", "noopener,noreferrer");
   };
 
   const inputCls =
@@ -158,6 +159,7 @@ export default function BookingForm() {
           </label>
           <input
             type="date"
+            min={minimumDate}
             value={date}
             onChange={(e) => setDate(e.target.value)}
             className={inputCls}
@@ -196,6 +198,7 @@ export default function BookingForm() {
               <input
                 id="bk-name"
                 type="text"
+                autoComplete="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className={inputCls}
@@ -209,6 +212,7 @@ export default function BookingForm() {
               <input
                 id="bk-phone"
                 type="tel"
+                autoComplete="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 className={inputCls}

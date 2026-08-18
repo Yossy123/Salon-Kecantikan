@@ -70,7 +70,7 @@ export default function HomePage() {
       </section>
 
       {/* Layanan Unggulan */}
-      <section className="bg-primary-light/40 py-20">
+      <section className="border-y border-ink/5 bg-stone-50 py-20">
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <SectionHeading
             eyebrow="Layanan"
@@ -96,7 +96,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Produk Perawatan"
             title="Lanjutkan Perawatan di Rumah"
-            subtitle="Produk pilihan untuk melengkapi rutinitas kulit dan tubuhmu setelah berkunjung ke Niggy Salon."
+            subtitle="Pilihan produk untuk melengkapi rutinitas kulit, tubuh, dan rambutmu setelah berkunjung ke Niggy Salon."
           />
           <div className="grid gap-6 md:grid-cols-3">
             {featuredProducts.map((product) => (
@@ -159,7 +159,8 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           <SectionHeading
             eyebrow="Testimoni"
-            title="Kata Mereka Setelah Berobat di Niggy"
+            title="Cerita Pelanggan Setelah Berkunjung"
+            subtitle="Pengalaman pelanggan yang telah mempercayakan waktu perawatannya kepada Niggy Salon."
           />
           <TestimonialSlider items={testimonials} />
         </div>

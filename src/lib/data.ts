@@ -161,7 +161,7 @@ export const services: Service[] = [
 export const staffMembers: StaffMember[] = [
   {
     name: "Yoshi",
-    position: "Makeup Stylist & Founder",
+    position: "Makeup Artist & Pendiri",
     photo: "profil.jpg",
     bio: "Pendiri Niggy Salon dengan pengalaman lebih dari 5 tahun dalam tata rias dan perawatan kecantikan.",
   },
@@ -283,7 +283,7 @@ export const articles: Article[] = [
 
 export const promos: Promo[] = [
   {
-    title: "Student Discount",
+    title: "Diskon Pelajar & Mahasiswa",
     subtitle: "Hemat hingga 25%",
     badge: "Hemat 25%",
     description:
@@ -405,13 +405,13 @@ export const testimonials: Testimonial[] = [
     name: "Dewi",
     service: "Brightening Facial",
     quote:
-      "Sudah promo cari facial yang suit dengan budget kerja. Di sini konsultasinya detail, hasil muka jadi lebih cerah.",
+      "Saya mencari facial yang sesuai dengan anggaran. Konsultasinya jelas dan kulit wajah terasa lebih segar setelah perawatan.",
   },
   {
     name: "Bima",
     service: "Hair Cut & Styling",
     quote:
-      "Potongannya rapi dan styling-nya awet seharian. Tempatnya nyaman, jadinya sering balik lagi.",
+      "Potongannya rapi dan styling-nya tahan seharian. Suasananya juga nyaman, jadi saya ingin datang lagi.",
   },
 ];
 

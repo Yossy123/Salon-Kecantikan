@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CLINIC_INFO } from "@/lib/data";
 import { mailtoLink, waLink } from "@/lib/wa";
 
 export default function ContactForm() {
@@ -23,9 +24,17 @@ export default function ContactForm() {
     if (!validate()) return;
     const body = `Dari: ${name}\nEmail: ${email || "-"}\n\n${message}`;
     if (via === "whatsapp") {
-      window.open(waLink(`${subject ? `[${subject}] ` : ""}${body}`), "_blank");
+      window.open(
+        waLink(`${subject ? `[${subject}] ` : ""}${body}`),
+        "_blank",
+        "noopener,noreferrer"
+      );
     } else {
-      window.location.href = mailtoLink("yossykusuma01@gmail.com", subject || "Pesan dari website", body);
+      window.location.href = mailtoLink(
+        CLINIC_INFO.email,
+        subject || "Pesan dari website",
+        body
+      );
     }
   };
 
@@ -42,6 +51,7 @@ export default function ContactForm() {
           <input
             id="ct-name"
             type="text"
+            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             className={inputCls}
@@ -55,6 +65,7 @@ export default function ContactForm() {
           <input
             id="ct-email"
             type="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className={inputCls}

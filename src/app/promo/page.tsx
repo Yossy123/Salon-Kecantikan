@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { promos } from "@/lib/data";
@@ -6,7 +7,7 @@ import { promos } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Promo",
   description:
-    "Promo dan paket hemat Niggy Salon: Student Discount, paket facial, bundle rambut, dan lainnya.",
+    "Promo dan paket hemat Niggy Salon: diskon pelajar dan mahasiswa, paket facial, bundle rambut, dan lainnya.",
 };
 
 export default function PromoPage() {
@@ -16,7 +17,7 @@ export default function PromoPage() {
         <SectionHeading
           eyebrow="Promo"
           title="Promo & Paket Hemat"
-          subtitle="Manfaatkan penawaran spesial untuk perawatan favoritmu."
+          subtitle="Pilih penawaran yang paling sesuai dengan kebutuhan perawatanmu."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {promos.map((promo) => (
@@ -24,12 +25,15 @@ export default function PromoPage() {
               key={promo.title}
               className="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-white shadow-sm"
             >
-              <div
-                className="h-44 bg-cover bg-center"
-                style={{ backgroundImage: `url('/images/${promo.image}')` }}
-                role="img"
-                aria-label={promo.title}
-              />
+              <div className="relative h-44 overflow-hidden">
+                <Image
+                  src={`/images/${promo.image}`}
+                  alt={`Ilustrasi ${promo.title}`}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <div className="flex flex-1 flex-col p-6">
                 <span className="mb-2 w-fit rounded-full bg-primary-light px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-dark">
                   {promo.badge}
